@@ -470,8 +470,8 @@ template {
     --header-logo-link-position: absolute;
     --header-logo-link-top: -1rem;
     --header-logo-link-left: 0;
-    
-        /* Customs transition properties */
+
+    /* Customs transition properties */
     --transition-duration: .3s;
     --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
@@ -617,7 +617,7 @@ a:active {
     background-color: var(--color-white);
     width: 0;
     height: 0.2rem;
-    transition: width var(--transition-duration) var(--transition-cubic-bezier);
+    transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .nav .nav-item:hover .nav-link::before {
@@ -678,7 +678,7 @@ ul.row {
     color: var(--button-hover-color);
     text-decoration: var(--button-hover-text-decoration);
     background: var(--button-hover-background);
-    transition-duration: (--transition-duration);
+    transition-duration: var(--transition-duration);
     transition-property: color, background-color;
 }
 
@@ -743,12 +743,12 @@ ul.row {
 }
 
 .card-testimonial .card-quote::before {
-    content: \201C;
+    content: "\201C";
     position: absolute;
     top: -4.5rem;
     left: -1rem;
     color: #efeded;
-    font: 10rem;
+    font-size: 10rem;
     z-index: -1;
 }
 
@@ -763,6 +763,10 @@ ul.row {
     overflow: hidden;
 }
 
+.card-work:hover .card-outer {
+    transform: scale(0.95);
+}
+
 .card-work .card-image img {
     height: 30rem;
     width: 100%;
@@ -770,13 +774,9 @@ ul.row {
     vertical-align: bottom;
 }
 
-.card-work:hover .card-image img {
+.card-work:hover .card-image {
     transform: scale(1.2);
-    transition: transform var(--transition-duration) var(--transition-cubic-bezier);
-}
-
-.card-work:hover .card-outer {
-    transform: scale(0.95);
+    transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .card-work .card-inner {
@@ -786,6 +786,7 @@ ul.row {
     right: -0.1rem;
     bottom: -0.1rem;
     z-index: 1;
+    transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .card-work:hover .card-inner {
@@ -806,7 +807,7 @@ ul.row {
     padding-top: 45%;
 }
 
-.card-work .card-title::after {
+.card-work .card-title a::after {
     position: absolute;
     top: 0;
     right: 0;
